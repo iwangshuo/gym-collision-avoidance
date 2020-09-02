@@ -1,0 +1,491 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Compare a new policy to the baselines &mdash; gym-collision-avoidance 1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Environment" href="env.html" />
+    <link rel="prev" title="Simulation Settings" href="config.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> gym-collision-avoidance
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="example.html">Minimum working example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">Software Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="config.html">Simulation Settings</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Use Cases</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Compare a new policy to the baselines</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#background">Background</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#instructions">Instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#optional-load-network-weights">Optional: Load Network Weights</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#train-a-new-rl-policy">Train a new RL policy</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">Background</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">Instructions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#collect-a-dataset-of-trajectories">Collect a dataset of trajectories</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id3">Background</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">Instructions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#formation-control">Formation Control</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id5">Background</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id6">Instructions</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Key Concepts</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="env.html">Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agent.html">Agent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sensors.html">Sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="policies.html">Policies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dynamics.html">Dynamics</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Advanced</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="build_docs.html">Build Docs Locally</a></li>
+<li class="toctree-l1"><a class="reference internal" href="train_multiagent_rl.html">Train a Multiagent RL Policy</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">gym-collision-avoidance</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Compare a new policy to the baselines</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/pages/use_cases.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="compare-a-new-policy-to-the-baselines">
+<span id="use-case-compare-new-policy"></span><h1>Compare a new policy to the baselines<a class="headerlink" href="#compare-a-new-policy-to-the-baselines" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="background">
+<h2>Background<a class="headerlink" href="#background" title="Permalink to this headline">¶</a></h2>
+<p>You may have your own collision avoidance policy implemented for another simulator.
+You can add a small wrapper around your policy so that it can be used by Agents in this environment.</p>
+<p>To easily make comparisons between algorithms, this repo provides several model-based and learning-based approaches, pre-defined test scenarios, and data collection scripts.</p>
+</div>
+<div class="section" id="instructions">
+<h2>Instructions<a class="headerlink" href="#instructions" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Create a new <code class="xref py py-class docutils literal notranslate"><span class="pre">InternalPolicy</span></code> sub-class (can use <code class="xref py py-class docutils literal notranslate"><span class="pre">NonCooperativePolicy</span></code> as an example)</p>
+<ul class="simple">
+<li><p>If necessary, add a submodule containing your helper methods that were written for some other environment (we use a <code class="code docutils literal notranslate"><span class="pre">Python-RVO2</span></code> submodule, for example)</p></li>
+<li><p>Implement the <code class="code docutils literal notranslate"><span class="pre">find_next_action</span></code> method of your new policy</p></li>
+<li><p>Import your new policy at the top of <code class="code docutils literal notranslate"><span class="pre">test_cases.py</span></code> and add it to the <code class="code docutils literal notranslate"><span class="pre">policy_dict</span></code> (e.g., add <code class="code docutils literal notranslate"><span class="pre">'new_policy':</span> <span class="pre">NewPolicy</span></code>)</p></li>
+</ul>
+</li>
+<li><p>Add an element to the dict in <code class="code docutils literal notranslate"><span class="pre">env_utils.py</span></code> corresponding to your new policy (e.g., <code class="code docutils literal notranslate"><span class="pre">'new_policy_name':</span> <span class="pre">{'policy':</span> <span class="pre">'new_policy',</span> <span class="pre">'sensors':</span> <span class="pre">['other_agents_states_sensor']}</span></code>)</p></li>
+<li><p>In <code class="code docutils literal notranslate"><span class="pre">config.py</span></code>, add an element to <code class="code docutils literal notranslate"><span class="pre">self.POLICIES_TO_TEST</span></code> with your new policy’s name, <code class="code docutils literal notranslate"><span class="pre">'new_policy_name'</span></code></p></li>
+<li><p>In <code class="code docutils literal notranslate"><span class="pre">config.py</span></code>, update <code class="code docutils literal notranslate"><span class="pre">self.NUM_AGENTS_TO_TEST</span></code> and <code class="code docutils literal notranslate"><span class="pre">self.NUM_TEST_CASES</span></code>, if desired</p></li>
+</ol>
+<p>Run the test case script, which will run the same NUM_TEST_CASES scenarios for each policy in POLICIES_TO_TEST, for each number of agents in NUM_AGENTS_TO_TEST:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">gym_collision_avoidance</span><span class="o">/</span><span class="n">experiments</span><span class="o">/</span><span class="n">run_full_test_suite</span><span class="o">.</span><span class="n">sh</span>
+</pre></div>
+</div>
+<p>These will a <code class="code docutils literal notranslate"><span class="pre">.png</span></code> for each trajectory on each test cases in <code class="code docutils literal notranslate"><span class="pre">experiments/results/full_test_suites</span></code>, and, if desired, a pandas DataFrame with statistics about the results.</p>
+<p>For example:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="figure align-default">
+<img alt="../_images/000_CADRL_2agents.png" src="../_images/000_CADRL_2agents.png" />
+</div>
+<p>CADRL</p>
+</td>
+<td><div class="figure align-default">
+<img alt="../_images/000_GA3C-CADRL-10_2agents.png" src="../_images/000_GA3C-CADRL-10_2agents.png" />
+</div>
+<p>GA3C-CADRL</p>
+</td>
+<td><div class="figure align-default">
+<img alt="../_images/000_RVO_2agents.png" src="../_images/000_RVO_2agents.png" />
+</div>
+<p>RVO</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="optional-load-network-weights">
+<h2>Optional: Load Network Weights<a class="headerlink" href="#optional-load-network-weights" title="Permalink to this headline">¶</a></h2>
+<p>If your new <code class="xref py py-class docutils literal notranslate"><span class="pre">InternalPolicy</span></code> should load network weights, you can simply hard-code the path in the init method.</p>
+<p>Or, you can add to your new policy something like the <code class="code docutils literal notranslate"><span class="pre">initialize_network</span></code> method in <code class="code docutils literal notranslate"><span class="pre">GA3CCADRLPolicy</span></code>. This allows you to have a default path to model weights, but also lets you pass in a specific path if you want to load a different one. This is why in <code class="code docutils literal notranslate"><span class="pre">env_utils.py</span></code> some policies have these dict entries:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;checkpt_dir&#39;</span><span class="p">:</span> <span class="s1">&#39;/path/to/run-20200403_144424-3eoowzko/checkpoints/&#39;</span><span class="p">,</span>
+<span class="s1">&#39;checkpt_name&#39;</span><span class="p">:</span> <span class="s1">&#39;network_01900000&#39;</span><span class="p">,</span>
+</pre></div>
+</div>
+<p>which are passed to the policy by calling <code class="code docutils literal notranslate"><span class="pre">agent.policy.initialize_network(**kwargs)</span></code>. An example of this is in <code class="code docutils literal notranslate"><span class="pre">run_full_test_suite.py</span></code> reset function.</p>
+<hr class="docutils" />
+</div>
+</div>
+<div class="section" id="train-a-new-rl-policy">
+<span id="use-case-train-rl"></span><h1>Train a new RL policy<a class="headerlink" href="#train-a-new-rl-policy" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>Background<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>So far, all the policies discussed in this document are pre-trained/defined, and the Environment queries those policies to compute an action from an observation.</p>
+<p>However, RL training scripts already have a mechanism for computing an action from an observation.
+Moreover, the RL algorithm will modify its action-selection rule throughout training, as the policy is updated or exploration hyperparameters change.</p>
+<p>Therefore, the <code class="xref py py-class docutils literal notranslate"><span class="pre">CollisionAvoidanceEnv</span></code> has a mechanism to accept actions from an external process and apply those to specific agents, while still keeping the agents whose policies are pre-defined totally internal to the environment.
+The external process (e.g., RL training script) can pass a dict of actions – keyed by the index of the Agent should take that action – as an argument to the <code class="code docutils literal notranslate"><span class="pre">env.step</span></code> command.</p>
+<p>You can distinguish Agents who should follow the action dict vs. query their own <code class="xref py py-class docutils literal notranslate"><span class="pre">Policy</span></code> by assigning the appropriate <code class="xref py py-class docutils literal notranslate"><span class="pre">Policy</span></code> sub-class to each Agent.
+Agents whose actions come from an external process should be given an <code class="xref py py-class docutils literal notranslate"><span class="pre">ExternalPolicy</span></code>.</p>
+<p>Since the RL algorithm might not be aware of the Env-specific actions (e.g., if RL returns a discrete <span class="math notranslate nohighlight">\(\texttt{external_action}\in\{0,1,2,3\}\)</span>, it still must be converted to a vehicle speed command for this environment), the <code class="code docutils literal notranslate"><span class="pre">external_action</span></code> from the <code class="code docutils literal notranslate"><span class="pre">actions</span></code> dict is sent through <code class="code docutils literal notranslate"><span class="pre">action</span> <span class="pre">=</span> <span class="pre">ExternalPolicy.external_action_to_action(external_action)</span></code>.</p>
+<p>We further specify a <code class="xref py py-class docutils literal notranslate"><span class="pre">LearningPolicy</span></code> as a subclass of <code class="xref py py-class docutils literal notranslate"><span class="pre">ExternalPolicy</span></code>, as this enables us to include a flag in the observation vector of whether or not this agent <code class="code docutils literal notranslate"><span class="pre">is_learning</span></code>.
+There may be some Agents in the environment with an <code class="xref py py-class docutils literal notranslate"><span class="pre">ExternalPolicy</span></code> (say, a real robot), but aren’t actively learning, so the RL algorithm may want to know to ignore those agents’ observations.</p>
+</div>
+<div class="section" id="id2">
+<h2>Instructions<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p>Create a new <code class="xref py py-class docutils literal notranslate"><span class="pre">LearningPolicy</span></code> sub-class (can use <code class="xref py py-class docutils literal notranslate"><span class="pre">LearningPolicyGA3C</span></code> as an example).</p>
+<ul class="simple">
+<li><p>Implement the <code class="code docutils literal notranslate"><span class="pre">external_action_to_action</span></code> method of your new policy</p></li>
+<li><p>Import your new policy at the top of <code class="code docutils literal notranslate"><span class="pre">test_cases.py</span></code> and add it to the <code class="code docutils literal notranslate"><span class="pre">policy_dict</span></code> (e.g., add <code class="code docutils literal notranslate"><span class="pre">'new_policy':</span> <span class="pre">NewPolicy</span></code>)</p></li>
+</ul>
+</li>
+<li><p>Decide what should go in the observation vector (can choose from components of <code class="code docutils literal notranslate"><span class="pre">self.STATE_INFO_DICT</span></code> in <code class="code docutils literal notranslate"><span class="pre">config.py</span></code> or add your own) and other default environment settings, such as whether you want to plot each episode, simulation timestep length, etc.</p>
+<blockquote>
+<div><ul>
+<li><p>Create a sub-class of <code class="code docutils literal notranslate"><span class="pre">config.py</span></code> and overwrite the default attributes of <code class="code docutils literal notranslate"><span class="pre">Config</span></code> if you’d like. For example to  change the observation vector but keep everything else:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">gym_collision_avoidance.envs.config</span> <span class="k">import</span> <span class="n">Config</span> <span class="k">as</span> <span class="n">EnvConfig</span>
+<span class="k">class</span> <span class="nc">Train</span><span class="p">(</span><span class="n">EnvConfig</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">STATES_IN_OBS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;is_learning&#39;</span><span class="p">,</span> <span class="s1">&#39;num_other_agents&#39;</span><span class="p">,</span> <span class="s1">&#39;dist_to_goal&#39;</span><span class="p">,</span> <span class="s1">&#39;heading_ego_frame&#39;</span><span class="p">,</span> <span class="s1">&#39;pref_speed&#39;</span><span class="p">,</span> <span class="s1">&#39;radius&#39;</span><span class="p">,</span> <span class="s1">&#39;other_agents_states_encoded&#39;</span><span class="p">]</span>
+        <span class="n">EnvConfig</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>I highly recommend starting by training a single RL agent. It is possible to receive multiple agents’ observations/rewards and send in multiple actions from your RL script, but that requires a little more work. So add this line as well:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">...</span>
+<span class="n">EnvConfig</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">TRAIN_SINGLE_AGENT</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>In your training script, before creating an instance of the environment, set the environment variables that point to your new config:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;GYM_CONFIG_CLASS&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Train&#39;</span>
+
+<span class="c1"># If your new config class is not in config.py, set this:</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;GYM_CONFIG_PATH&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;path_to_file_containing_your_new_config_class&#39;</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>Decide which scenarios to train on: by default, it will be random test cases with agents whose policies follow a random distribution of static, non-cooperative, learning-ga3c. Instead, it would be best to start with 2-agent scenarios, where one agent uses your <code class="code docutils literal notranslate"><span class="pre">'new_policy'</span></code> the other uses RVO. In your custom config, update the test case args:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">...</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">MAX_NUM_AGENTS_IN_ENVIRONMENT</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">MAX_NUM_AGENTS_TO_SIM</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">EnvConfig</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">TEST_CASE_ARGS</span><span class="p">[</span><span class="s1">&#39;num_agents&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">TEST_CASE_ARGS</span><span class="p">[</span><span class="s1">&#39;policy_to_ensure&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;new_policy&#39;</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">TEST_CASE_ARGS</span><span class="p">[</span><span class="s1">&#39;policies&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;new_policy&#39;</span><span class="p">,</span> <span class="s1">&#39;RVO&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Initialize the environment and start doing RL!</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">gym_collision_avoidance.experiments.src.env_utils</span> <span class="k">import</span> <span class="n">create_env</span>
+
+<span class="c1"># env: a VecEnv wrapper around the CollisionAvoidanceEnv</span>
+<span class="c1"># one_env: an actual CollisionAvoidanceEnv class (the unwrapped version of the first env in the VecEnv)</span>
+<span class="n">env</span><span class="p">,</span> <span class="n">one_env</span> <span class="o">=</span> <span class="n">create_env</span><span class="p">()</span>
+
+<span class="n">obs</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_episodes</span><span class="p">):</span>
+    <span class="n">actions</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">rl_action</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">obs</span><span class="p">)</span>
+    <span class="n">actions</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">rl_action</span>
+
+    <span class="c1"># No need to supply actions for non-learning agents</span>
+
+    <span class="c1"># Run a simulation step (check for collisions, move sim agents)</span>
+    <span class="n">obs</span><span class="p">,</span> <span class="n">reward</span><span class="p">,</span> <span class="n">game_over</span><span class="p">,</span> <span class="n">which_agents_done</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">step</span><span class="p">([</span><span class="n">actions</span><span class="p">])</span>
+
+    <span class="c1"># Do RL stuff with the (obs, rl_action, reward)...</span>
+</pre></div>
+</div>
+</div></blockquote>
+</li>
+<li><p>If you get to a point where your RL agent has learned something pretty good, you may want to create an <code class="xref py py-class docutils literal notranslate"><span class="pre">InternalPolicy</span></code> where you load pre-trained model parameters – see <a class="reference internal" href="#use-case-compare-new-policy"><span class="std std-ref">Compare a new policy to the baselines</span></a> for how to do this. This is a great way to share your good policy back to the community, who might just want to use your policy without re-training or interfacing with any RL code.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Note: If you do this, you’ll want to name the associated internal policy something different than the external policy you used for RL training. So far, the convention has been: train with LearningPolicyAlg, evaluate with AlgPolicy.</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
+<p>If you want to train using observations of multiple learning agents in parallel, please see <a class="reference internal" href="train_multiagent_rl.html#train-multiagent-rl"><span class="std std-ref">Train a Multiagent RL Policy</span></a> or the <a class="reference external" href="https://github.com/mit-acl/rl_collision_avoidance">RL Collision Avoidance repo</a> for our GA3C-CADRL policy.</p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="collect-a-dataset-of-trajectories">
+<h1>Collect a dataset of trajectories<a class="headerlink" href="#collect-a-dataset-of-trajectories" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id3">
+<h2>Background<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>Collecting realistic trajectory data on dynamic agents is difficult and often time-intensive.</p>
+<p>The two typical approaches are:</p>
+<ol class="arabic simple">
+<li><p>Set up a camera and collect video of people moving (requires post-processing to extract trajectories)</p></li>
+<li><p>Set up a simulation of agents and extract their trajectories (requires realistic motion models)</p></li>
+</ol>
+<p>Many of the packages we’ve experimented with that implement pedestrian motion models do not produce particularly interactive behavior, but the GA3C-CADRL, CADRL, and RVO agents in this repo typically do yield some interesting multi-agent interactions.</p>
+<p>Thus, collecting a dataset of trajectories using this repo could help with making more realistic predictions about how agents might respond to various actions by another agent, without requiring real human data.
+If nothing else, the simulated trajectories can be designed to help debug and initially test your prediction code.</p>
+</div>
+<div class="section" id="id4">
+<h2>Instructions<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">gym_collision_avoidance</span><span class="o">/</span><span class="n">experiments</span><span class="o">/</span><span class="n">run_trajectory_dataset_creator</span><span class="o">.</span><span class="n">sh</span>
+</pre></div>
+</div>
+<p>This will store <code class="code docutils literal notranslate"><span class="pre">png</span></code> files of the trajectories and a <code class="code docutils literal notranslate"><span class="pre">.pkl</span></code> file of relevant data from the trajectories in the <code class="code docutils literal notranslate"><span class="pre">experiments/results/trajectory_dataset</span></code> folder.
+The resulting dataset could be used to train predictive models, initialize an RL agent’s policy, etc.
+You can change the <code class="code docutils literal notranslate"><span class="pre">test_case_fn</span></code> to use different scenarios, the <code class="code docutils literal notranslate"><span class="pre">policies</span></code> dict to give agents different policies, etc.</p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="formation-control">
+<h1>Formation Control<a class="headerlink" href="#formation-control" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id5">
+<h2>Background<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>Say you have a good policy and want to make it spell letters or make interesting shapes, rather than just do random test cases all day.</p>
+</div>
+<div class="section" id="id6">
+<h2>Instructions<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<p>Spell out CADRL, with agents starting where they ended the previous episode:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">gym_collision_avoidance</span><span class="o">/</span><span class="n">experiments</span><span class="o">/</span><span class="n">run_cadrl_formations</span><span class="o">.</span><span class="n">sh</span>
+</pre></div>
+</div>
+<p>This will save plots and animations of 10 letters (<code class="code docutils literal notranslate"><span class="pre">.gif</span></code> and <code class="code docutils literal notranslate"><span class="pre">.mp4</span></code>) format in <code class="code docutils literal notranslate"><span class="pre">gym_collision_avoidance/experiments/results/cadrl_formations</span></code>.</p>
+<p>For example:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="figure align-default">
+<img alt="../_images/formation_C.gif" src="../_images/formation_C.gif" />
+</div>
+<p>C</p>
+</td>
+<td><div class="figure align-default">
+<img alt="../_images/formation_A.gif" src="../_images/formation_A.gif" />
+</div>
+<p>A</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="env.html" class="btn btn-neutral float-right" title="Environment" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="config.html" class="btn btn-neutral float-left" title="Simulation Settings" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Michael Everett
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

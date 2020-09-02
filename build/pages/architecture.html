@@ -1,0 +1,261 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Software Architecture &mdash; gym-collision-avoidance 1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Simulation Settings" href="config.html" />
+    <link rel="prev" title="Minimum working example" href="example.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> gym-collision-avoidance
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="install.html">Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="example.html">Minimum working example</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Software Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="config.html">Simulation Settings</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Use Cases</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="use_cases.html">Compare a new policy to the baselines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="use_cases.html#train-a-new-rl-policy">Train a new RL policy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="use_cases.html#collect-a-dataset-of-trajectories">Collect a dataset of trajectories</a></li>
+<li class="toctree-l1"><a class="reference internal" href="use_cases.html#formation-control">Formation Control</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Key Concepts</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="env.html">Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agent.html">Agent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sensors.html">Sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="policies.html">Policies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dynamics.html">Dynamics</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Advanced</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="build_docs.html">Build Docs Locally</a></li>
+<li class="toctree-l1"><a class="reference internal" href="train_multiagent_rl.html">Train a Multiagent RL Policy</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">gym-collision-avoidance</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Software Architecture</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/pages/architecture.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="software-architecture">
+<span id="architecture"></span><h1>Software Architecture<a class="headerlink" href="#software-architecture" title="Permalink to this headline">¶</a></h1>
+<p>There are 5 key types of objects: <code class="xref py py-class docutils literal notranslate"><span class="pre">CollisionAvoidanceEnv</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Agent</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Sensor</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Policy</span></code>, and <code class="xref py py-class docutils literal notranslate"><span class="pre">Dynamics</span></code>.</p>
+<div class="figure align-default">
+<img alt="../_images/gym_arch.png" src="../_images/gym_arch.png" />
+</div>
+<p>A simulation begins by creating an instance of the <code class="xref py py-class docutils literal notranslate"><span class="pre">CollisionAvoidanceEnv</span></code> : <code class="code docutils literal notranslate"><span class="pre">env</span> <span class="pre">=</span> <span class="pre">CollisionAvoidanceEnv()</span></code></p>
+<p>After initialization, the <code class="xref py py-class docutils literal notranslate"><span class="pre">CollisionAvoidanceEnv</span></code> contains a list of <code class="xref py py-class docutils literal notranslate"><span class="pre">Agent</span></code> s, stored at <code class="code docutils literal notranslate"><span class="pre">env.agents</span></code> (More on how this list gets populated, later).
+Each <code class="xref py py-class docutils literal notranslate"><span class="pre">Agent</span></code> in that list has a <code class="xref py py-class docutils literal notranslate"><span class="pre">Policy</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Dynamics</span></code>, a list of <code class="xref py py-class docutils literal notranslate"><span class="pre">Sensor</span></code> s, and other attributes about its state, such as its current position, velocity, radius, and goal position.</p>
+<p>An external process moves the <code class="xref py py-class docutils literal notranslate"><span class="pre">CollisionAvoidanceEnv</span></code> forward in time by calling <code class="code docutils literal notranslate"><span class="pre">env.step</span></code>, which triggers each <code class="xref py py-class docutils literal notranslate"><span class="pre">Agent</span></code> to:</p>
+<ul class="simple">
+<li><p>use its <code class="xref py py-class docutils literal notranslate"><span class="pre">Policy</span></code> to compute its next action from its current observation</p></li>
+<li><p>use its <code class="xref py py-class docutils literal notranslate"><span class="pre">Dynamics</span></code> model to compute its next state by applying the computed action</p></li>
+<li><p>use its <code class="xref py py-class docutils literal notranslate"><span class="pre">Sensor</span></code> s to compute its next observation by measuring properties of the <code class="xref py py-class docutils literal notranslate"><span class="pre">CollisionAvoidanceEnv</span></code>.</p></li>
+</ul>
+<p>The env.step call returns useful information to the caller (not in this order):</p>
+<ul class="simple">
+<li><p><strong>next_obs</strong>: All agents’ next observations, computed by their Sensors, are stuffed into one data structure. Note: This is only useful if some <code class="xref py py-class docutils literal notranslate"><span class="pre">Agent</span></code> s have ExternalPolicies, otherwise the <code class="xref py py-class docutils literal notranslate"><span class="pre">CollisionAvoidanceEnv</span></code> already has access to the each <code class="xref py py-class docutils literal notranslate"><span class="pre">Agent</span></code>’s most recent observation and does action selection internally.</p></li>
+<li><p><strong>info</strong>: The <code class="xref py py-class docutils literal notranslate"><span class="pre">CollisionAvoidanceEnv</span></code> will also check whether any <code class="xref py py-class docutils literal notranslate"><span class="pre">Agent</span></code> s have collided with one another or a static obstacle, reached their goal, or run out of time. If any of these conditions are True, that <code class="xref py py-class docutils literal notranslate"><span class="pre">Agent</span></code> is “done”, and a dict of which agents are done/not is put into info.</p></li>
+<li><p><strong>game_over</strong>: If all agents are “done”, then that episode is “done”, which is also returned by the env.step call (“game_over”) [Note: the condition on when to end the episode, (e.g., wait for all agents to be done, just one, just ones with certain properties) can be adjusted]</p></li>
+<li><p><strong>reward</strong>: In the process of checking for collisions and goal-reaching, the <code class="xref py py-class docutils literal notranslate"><span class="pre">CollisionAvoidanceEnv</span></code> also computes a scalar reward for each <code class="xref py py-class docutils literal notranslate"><span class="pre">Agent</span></code>; the reward list is returned by the env.step call</p></li>
+</ul>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="config.html" class="btn btn-neutral float-right" title="Simulation Settings" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="example.html" class="btn btn-neutral float-left" title="Minimum working example" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Michael Everett
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

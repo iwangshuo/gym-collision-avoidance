@@ -1,0 +1,320 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>gym-collision-avoidance: Documentation &mdash; gym-collision-avoidance 1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Install" href="pages/install.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="#" class="icon icon-home" alt="Documentation Home"> gym-collision-avoidance
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="pages/install.html">Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/example.html">Minimum working example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/architecture.html">Software Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/config.html">Simulation Settings</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Use Cases</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="pages/use_cases.html">Compare a new policy to the baselines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/use_cases.html#train-a-new-rl-policy">Train a new RL policy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/use_cases.html#collect-a-dataset-of-trajectories">Collect a dataset of trajectories</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/use_cases.html#formation-control">Formation Control</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Key Concepts</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="pages/env.html">Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/agent.html">Agent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/sensors.html">Sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/policies.html">Policies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/dynamics.html">Dynamics</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Advanced</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="pages/build_docs.html">Build Docs Locally</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pages/train_multiagent_rl.html">Train a Multiagent RL Policy</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">gym-collision-avoidance</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="#" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>gym-collision-avoidance: Documentation</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="gym-collision-avoidance-documentation">
+<h1>gym-collision-avoidance: Documentation<a class="headerlink" href="#gym-collision-avoidance-documentation" title="Permalink to this headline">¶</a></h1>
+<p>In this multiagent environment, agents try to get to their own goal location (specified at the start of each episode) by using one of many collision avoidance policies implemented.
+Episodes end when agents reach their goal, collide, or timeout.
+Agents can observe the environment through several types of <strong>sensors</strong>, act according to pre-implemented and extendable <strong>policies</strong>, and behave according to customizable <strong>dynamics</strong> models.</p>
+<p><strong>Objective</strong>: Provide a flexible codebase, reduce time spent re-implementing existing works, and establish baselines for multiagent collision avoidance problems.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="figure align-default">
+<img alt="_images/combo.gif" src="_images/combo.gif" />
+</div>
+<p>Formation Control</p>
+</td>
+<td><div class="figure align-default">
+<img alt="_images/jackal_iros18.gif" src="_images/jackal_iros18.gif" />
+</div>
+<p>Policies Deployable on Hardware</p>
+</td>
+</tr>
+<tr class="row-even"><td><div class="figure align-default">
+<img alt="_images/a3c_20_agents.gif" src="_images/a3c_20_agents.gif" />
+</div>
+<p>Many-Agent Scenarios</p>
+</td>
+<td><div class="figure align-default">
+<img alt="_images/random_2_agents.gif" src="_images/random_2_agents.gif" />
+</div>
+<p>Random Scenarios</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+<div class="section" id="policies-implemented">
+<h1>Policies Implemented<a class="headerlink" href="#policies-implemented" title="Permalink to this headline">¶</a></h1>
+<p>Learning-based:</p>
+<ul class="simple">
+<li><p>SA-CADRL: <a class="reference external" href="https://arxiv.org/pdf/1703.08862.pdf">Socially Aware Motion Planning with Deep Reinforcement Learning</a></p></li>
+<li><p>GA3C-CADRL: <a class="reference external" href="https://arxiv.org/pdf/1805.01956.pdf">Motion Planning Among Dynamic, Decision-Making Agents with Deep Reinforcement Learning</a></p></li>
+<li><p>DRL_Long: <a class="reference external" href="https://arxiv.org/abs/1709.10082">Towards Optimally Decentralized Multi-Robot Collision Avoidance via Deep Reinforcement Learning</a></p></li>
+</ul>
+<p>Model-based:</p>
+<ul class="simple">
+<li><p>RVO/ORCA: <a class="reference external" href="https://github.com/sybrenstuvel/Python-RVO2">Python-RVO2</a></p></li>
+<li><p>Non-Cooperative (constant velocity toward goal position)</p></li>
+<li><p>Static (zero velocity)</p></li>
+</ul>
+<p>Desired Additions:</p>
+<ul class="simple">
+<li><p>DWA</p></li>
+<li><p>Social Forces</p></li>
+<li><p>Additional learning-based methods</p></li>
+<li><p>Other model-based methods</p></li>
+<li><p>Centralized planners</p></li>
+<li><p>…</p></li>
+</ul>
+</div>
+<div class="section" id="if-you-find-this-code-useful-please-consider-citing">
+<h1>If you find this code useful, please consider citing:<a class="headerlink" href="#if-you-find-this-code-useful-please-consider-citing" title="Permalink to this headline">¶</a></h1>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@inproceedings</span><span class="p">{</span><span class="n">Everett18_IROS</span><span class="p">,</span>
+  <span class="n">address</span> <span class="o">=</span> <span class="p">{</span><span class="n">Madrid</span><span class="p">,</span> <span class="n">Spain</span><span class="p">},</span>
+  <span class="n">author</span> <span class="o">=</span> <span class="p">{</span><span class="n">Everett</span><span class="p">,</span> <span class="n">Michael</span> <span class="ow">and</span> <span class="n">Chen</span><span class="p">,</span> <span class="n">Yu</span> <span class="n">Fan</span> <span class="ow">and</span> <span class="n">How</span><span class="p">,</span> <span class="n">Jonathan</span> <span class="n">P</span><span class="o">.</span><span class="p">},</span>
+  <span class="n">booktitle</span> <span class="o">=</span> <span class="p">{</span><span class="n">IEEE</span><span class="o">/</span><span class="n">RSJ</span> <span class="n">International</span> <span class="n">Conference</span> <span class="n">on</span> <span class="n">Intelligent</span> <span class="n">Robots</span> <span class="ow">and</span> <span class="n">Systems</span> <span class="p">(</span><span class="n">IROS</span><span class="p">)},</span>
+  <span class="n">date</span><span class="o">-</span><span class="n">modified</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2018</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">03</span> <span class="mi">06</span><span class="p">:</span><span class="mi">18</span><span class="p">:</span><span class="mi">08</span> <span class="o">-</span><span class="mi">0400</span><span class="p">},</span>
+  <span class="n">month</span> <span class="o">=</span> <span class="n">sep</span><span class="p">,</span>
+  <span class="n">title</span> <span class="o">=</span> <span class="p">{</span><span class="n">Motion</span> <span class="n">Planning</span> <span class="n">Among</span> <span class="n">Dynamic</span><span class="p">,</span> <span class="n">Decision</span><span class="o">-</span><span class="n">Making</span> <span class="n">Agents</span> <span class="k">with</span> <span class="n">Deep</span> <span class="n">Reinforcement</span> <span class="n">Learning</span><span class="p">},</span>
+  <span class="n">year</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2018</span><span class="p">},</span>
+  <span class="n">url</span> <span class="o">=</span> <span class="p">{</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">arxiv</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">pdf</span><span class="o">/</span><span class="mf">1805.01956</span><span class="o">.</span><span class="n">pdf</span><span class="p">},</span>
+  <span class="n">bdsk</span><span class="o">-</span><span class="n">url</span><span class="o">-</span><span class="mi">1</span> <span class="o">=</span> <span class="p">{</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">arxiv</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">pdf</span><span class="o">/</span><span class="mf">1805.01956</span><span class="o">.</span><span class="n">pdf</span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="pages/install.html" class="btn btn-neutral float-right" title="Install" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Michael Everett
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,266 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Simulation Settings &mdash; gym-collision-avoidance 1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Compare a new policy to the baselines" href="use_cases.html" />
+    <link rel="prev" title="Software Architecture" href="architecture.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> gym-collision-avoidance
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="install.html">Install</a></li>
+<li class="toctree-l1"><a class="reference internal" href="example.html">Minimum working example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="architecture.html">Software Architecture</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Simulation Settings</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Use Cases</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="use_cases.html">Compare a new policy to the baselines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="use_cases.html#train-a-new-rl-policy">Train a new RL policy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="use_cases.html#collect-a-dataset-of-trajectories">Collect a dataset of trajectories</a></li>
+<li class="toctree-l1"><a class="reference internal" href="use_cases.html#formation-control">Formation Control</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Key Concepts</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="env.html">Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="agent.html">Agent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sensors.html">Sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="policies.html">Policies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dynamics.html">Dynamics</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Advanced</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="build_docs.html">Build Docs Locally</a></li>
+<li class="toctree-l1"><a class="reference internal" href="train_multiagent_rl.html">Train a Multiagent RL Policy</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">gym-collision-avoidance</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Simulation Settings</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/pages/config.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="simulation-settings">
+<span id="config"></span><h1>Simulation Settings<a class="headerlink" href="#simulation-settings" title="Permalink to this headline">¶</a></h1>
+<p>All settings are controlled by <code class="code docutils literal notranslate"><span class="pre">config.py</span></code>. There is a default <code class="code docutils literal notranslate"><span class="pre">Config</span></code> class with settings such as, whether to plot episodes, simulation timestep, etc.</p>
+<p>If you have your own experiment in mind, you should create a subclass of <code class="code docutils literal notranslate"><span class="pre">Config</span></code> to overwrite the default settings. For example, if you want to keep all defaults but also save a plot from each episode:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">gym_collision_avoidance.envs.config</span> <span class="k">import</span> <span class="n">Config</span> <span class="k">as</span> <span class="n">EnvConfig</span>
+<span class="k">class</span> <span class="nc">NewExperiment</span><span class="p">(</span><span class="n">EnvConfig</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">EnvConfig</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">SAVE_EPISODE_PLOTS</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>It’s a little sketchy whether you should put your changes before/after the initialization of the superclass. Some attributes need to be set before the superclass is initialized because they are used in determining other settings, and others will be overwritten if you do this… it may be safest to put them before and after for now? Sorry about this.</p>
+</div>
+<p>In your experiment script, before creating an instance of the environment, set the environment variables that point to your new config:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;GYM_CONFIG_CLASS&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;NewExperiment&#39;</span>
+
+<span class="c1"># If your new config class is not in config.py, set this:</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;GYM_CONFIG_PATH&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;path_to_file_containing_your_new_config_class&#39;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>You can see examples of experiment config classes in <code class="code docutils literal notranslate"><span class="pre">config.py</span></code>, such as <code class="code docutils literal notranslate"><span class="pre">Formations</span></code></p>
+<p>I am open to suggestions on better ways of handling the settings file.</p>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="use_cases.html" class="btn btn-neutral float-right" title="Compare a new policy to the baselines" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="architecture.html" class="btn btn-neutral float-left" title="Software Architecture" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Michael Everett
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
